@@ -315,7 +315,7 @@ if __name__ == '__main__':
     save_path          = os.path.join(args.save_path, args.model_name)
     current_timestamp  = datetime.now().timestamp()
     current_datetime   = datetime.fromtimestamp(current_timestamp+29220)  # different time zone
-    formatted_datetime = current_datetime.strftime("%Y-%m-%d_%H:%M:%S")
+    formatted_datetime = current_datetime.strftime("%Y.%m.%d_%H-%M-%S")
     exp_path           = os.path.join(save_path, 'log_' + formatted_datetime)
 
     os.makedirs(save_path, exist_ok=True)
