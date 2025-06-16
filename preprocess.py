@@ -12,10 +12,10 @@ LDPolypVideo dataset
 '''
 def save_box_ld(path):
     with open(path+'train_box.txt', 'w') as train_box:
-        for folder in sorted(os.listdir(path+'Train/Annotations'), key=lambda x:int(x)):
-            for text in sorted(os.listdir(path+'Train/Annotations/'+folder)):
+        for folder in sorted(os.listdir(path+'TrainValid/Annotations'), key=lambda x:int(x)):
+            for text in sorted(os.listdir(path+'TrainValid/Annotations/'+folder)):
                 print(folder + '/' + text)
-                with open(path+'Train/Annotations/'+folder+'/'+text) as txt:
+                with open(path+'TrainValid/Annotations/'+folder+'/'+text) as txt:
                     lines = txt.readlines()
                     polyp_num = lines[0].strip()
                     if int(polyp_num) == 0:
@@ -138,7 +138,7 @@ def save_box_cvc(path):
                         fbox.write(line[:-1]+'\n')
 
 if __name__=='__main__':
-    DATAPATH = 'dataset/'   # path to your dataset locations
+    DATAPATH = 'data/'   # path to your dataset locations
     if sys.argv[1] == 'ld':
         save_box_ld(DATAPATH)
     if sys.argv[1] == 'sun':
