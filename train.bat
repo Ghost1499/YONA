@@ -1,0 +1,13 @@
+python -m torch.distributed.launch --nproc_per_node=2 --master_port=29500 --use_env train.py ^
+    --gpu_id "0,1" ^
+    --data_path .\data ^
+    --save_path .\result ^
+    --model_name YONA ^
+    --lr 5e-4 ^
+    --backbone resnet50 ^
+    --epoch 50 ^
+    --train_clips 2 ^
+    --test_clips 2 ^
+    --scheduler step ^
+    --n_threads 6 ^
+    --batch_size 8
