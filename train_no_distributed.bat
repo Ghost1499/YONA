@@ -1,4 +1,4 @@
-python -m torch.distributed.launch --nproc_per_node=1 --use_env train.py ^
+python train.py ^
     --gpu_id "0" ^
     --data_path .\data ^
     --save_path .\result ^
@@ -10,5 +10,4 @@ python -m torch.distributed.launch --nproc_per_node=1 --use_env train.py ^
     --test_clips 2 ^
     --scheduler step ^
     --n_threads 6 ^
-    --batch_size 8
-
+    --batch_size 8 
